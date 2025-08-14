@@ -1,0 +1,13 @@
+[Unit]
+Description=Mini Rust Server
+After=network.target
+
+[Service]
+User=rustsvc
+WorkingDirectory=/opt/mini-server
+ExecStart=/opt/mini-server/mini-server
+Restart=always
+Environment=RUST_LOG=info
+
+[Install]
+WantedBy=multi-user.target
